@@ -1,5 +1,5 @@
 package ca.ucalgary.ensf380;
 
-public class Notification {
+public class Nonfiction {
 
 }
