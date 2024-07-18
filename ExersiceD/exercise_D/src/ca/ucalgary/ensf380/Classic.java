@@ -35,12 +35,4 @@ public class Classic extends Hardcover {
     public void setBookPublisher(Publisher[] bookPublisher) {
         this.bookPublisher = bookPublisher;
     }
-
-    public String createNotes() {
-        return "Method createNotes called from Classic";
-    }
-
-    public String getOrigPubYear(int i) {
-        return "Method getOrigPubYear called from Classic";
-    }
 }

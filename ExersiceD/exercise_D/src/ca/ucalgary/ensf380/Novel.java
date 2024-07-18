@@ -23,6 +23,6 @@ public class Novel extends Fiction {
     }
 
     public void setMySeries(Series mySeries) {
-    	this.mySeries = mySeries;
-    	}
+        this.mySeries = mySeries;
     }
+}

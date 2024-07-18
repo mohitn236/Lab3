@@ -25,4 +25,5 @@ public class Fiction extends Book {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+    
 }
