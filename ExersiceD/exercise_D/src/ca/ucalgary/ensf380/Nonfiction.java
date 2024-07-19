@@ -42,6 +42,16 @@ public class Nonfiction extends Book {
     public void setDeweyClassification(Category deweyClassification) {
         this.deweyClassification = deweyClassification;
     }
+
+	public Object topic() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getCoverArt() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 
 

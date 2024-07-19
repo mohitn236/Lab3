@@ -14,6 +14,10 @@ import java.lang.reflect.Method;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
+import ca.ucalgary.ensf380.Anthology;
+import ca.ucalgary.ensf380.Nonfiction;
+import ca.ucalgary.ensf380.Novel;
+
 /*
 19 The following are a selection of tests to get you started with checking
 your Books . java implementation . Feel free to add your own !
@@ -29,21 +33,21 @@ public BooksTest() {
 
 @Test
 public void checkRelationship_AnthologyCoverArt(){
-Anthology anthology = new Anthology();
+Anthology anthology = new Anthology(isbn, pages, pages, isbn, isbn, isbn, null);
 String expected = " Method coverArt called from Anthology " ;
-assertEquals ( "Expected statement was not returned from coverArt () in the Anthology class : " , expected, anthology.coverArt());
+assertEquals ( "Expected statement was not returned from coverArt () in the Anthology class : " , expected, anthology.getCoverArt());
  }
 
 @Test
 public void testAnthology_DefaultConstructor() {
-    Anthology newAnthology = new Anthology();
+    Anthology newAnthology = new Anthology(isbn, pages, pages, isbn, isbn, isbn, null);
     assertNotNull("Default constructor failed, new Anthology object is null:", newAnthology);
 }
 
 @Test
 public void testAnthology_InheritedConstructor(){
 
-Anthology newAnthology = new Anthology(isbn, pages);
+Anthology newAnthology = new Anthology(isbn, pages, pages, isbn, isbn, isbn, null);
 assertNotNull ( " Inherited constructor failed , new Anthology object is null : " , newAnthology ) ;
  }
 
@@ -51,33 +55,33 @@ assertNotNull ( " Inherited constructor failed , new Anthology object is null : 
 public void testPaperbackCoverArt () {
 
 
-Nonfiction newNF = new Nonfiction () ;
+Nonfiction newNF = new Nonfiction (isbn, pages, pages, null) ;
 String expected = " Method coverArt called from Paperback " ;
-assertEquals ("Expected statement was not returned from coverArt () in the Paperback class : " , expected , newNF.coverArt());
+assertEquals ("Expected statement was not returned from coverArt () in the Paperback class : " , expected , newNF.getCoverArt());
 
  }
 
 @Test
 public void checkRelationship_NovelCoverArt(){
 	
-Novel novel = new Novel();
+Novel novel = new Novel(isbn, pages, pages, isbn, isbn, null, null);
 String expected = " Method coverArt called from Novel " ;
-assertEquals ( " Expected statement was not returned from coverArt () in the Novel class : " , expected , novel.coverArt());
+assertEquals ( " Expected statement was not returned from coverArt () in the Novel class : " , expected , novel.getCoverArt());
 }
 
 
 @Test
 public void testFictionGenre() {
 
-Anthology antho = new Anthology();
+Anthology antho = new Anthology(isbn, pages, pages, isbn, isbn, isbn, null);
 String expected = "Method genre called from Fiction";
-assertEquals ("Expected statement was not returned from genre () in the Fiction class : " , expected , antho.genre());
+assertEquals ("Expected statement was not returned from genre () in the Fiction class : " , expected , antho.getGenre());
 }
 
 @Test
 public void checkRelationship_NonfictionTopic() {
 	
-Nonfiction nonfiction = new Nonfiction();
+Nonfiction nonfiction = new Nonfiction(isbn, pages, pages, null);
 String expected = " Method topic called from Nonfiction " ;
 assertEquals ( " Expected statement was not returned from topic () in the Nonfiction class : " ,expected, nonfiction.topic());
 }
